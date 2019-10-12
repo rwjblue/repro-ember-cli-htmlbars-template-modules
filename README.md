@@ -1,38 +1,24 @@
-repro-ember-cli-htmlbars-template-modules
-==============================================================================
+# repro-ember-cli-htmlbars-template-modules
 
-[Short description of the addon.]
+This is a reproduction to showcase, templates are not re-exported as modules.
 
+Setup:
 
-Compatibility
-------------------------------------------------------------------------------
-
-* Ember.js v2.18 or above
-* Ember CLI v2.13 or above
-* Node.js v8 or above
-
-
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install repro-ember-cli-htmlbars-template-modules
+```bash
+yarn
+ember s
 ```
 
+Open the app in the browser, check the console tab, it has the following error
+message:
 
-Usage
-------------------------------------------------------------------------------
+```bash
+Could not find module `repro-ember-cli-htmlbars-template-modules/components/foo/template` imported from `dummy/templates/components/foo`
+```
 
-[Longer description of how to use the addon in apps.]
+I tried two versions of `ember-cli-htmlbars`:
 
+- `3.1.0` -> works
+- `4.0.5` -> does not work
 
-Contributing
-------------------------------------------------------------------------------
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+With the same code given here.
